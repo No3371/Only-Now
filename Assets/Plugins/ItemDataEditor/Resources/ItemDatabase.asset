@@ -11,24 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3190e30b50ea4a94b968dedf2e33225d, type: 3}
   m_Name: ItemDatabase
   m_EditorClassIdentifier: 
-  lastBackupTime: 636174959923101071
-  ItemList:
-  - {fileID: 114417007093679880}
---- !u!114 &114417007093679880
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f62d9d19194097448bc7c05fea59a75e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemID: 1
-  itemBasicDescription: 
-  itemThumbnail: {fileID: 21300000, guid: fd4ad68fe2f6eea4a90e7393260a52c8, type: 3}
-  itemImage: {fileID: 21300000, guid: 271f86082d39cb148862c9c7c0e26092, type: 3}
+  lastBackupTime: 636189898946380441
+  ItemList: []
 --- !u!114 &114632927023815608
 MonoBehaviour:
   m_ObjectHideFlags: 1

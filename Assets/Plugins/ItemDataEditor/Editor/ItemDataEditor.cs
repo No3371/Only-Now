@@ -96,7 +96,7 @@ using UnityEngine.Events;
 			}			
 			if (itemNamesCache == null) {
 				if (itemDataEditorDebugging) Debug.Log("ItemDataEditor:: CheckInit():: itemNamesCache is null.");
-				CacheItemNames(itemDatabaseCache.ItemList);
+				CacheItemNames();
 				filteredItemNamesCache = new List<string>(itemNamesCache);
 			}
 			if (!itemEditorSkin) itemEditorSkin = Resources.Load<GUISkin>("ItemEditor");
@@ -117,8 +117,14 @@ using UnityEngine.Events;
 
 			if (entryCache == null) {
 				if (itemDataEditorDebugging) Debug.Log("ItemDataEditor:: CheckInit():: entryCache is null. Trying to load filteredList[" + selected + "].");
-				LoadEntry(filteredList[selected]);
-				dDrawEditorContent = EditorContent_DrawEditor;
+				if (filteredList.Count > 0) {
+					LoadEntry(filteredList[selected]);
+					dDrawEditorContent = EditorContent_DrawEditor;
+				}
+				else {
+					if (itemDataEditorDebugging) Debug.Log("ItemDataEditor:: CheckInit():: filteredList is empty.");	
+					dDrawEditorContent = EditorContent_NoSelection;
+				}
 			}
 			
 		}
@@ -334,7 +340,7 @@ using UnityEngine.Events;
 			}
 		}
 
-		static void CacheItemNames(List<ItemDataEntry> entryList){
+		static void CacheItemNames(){
 			if (itemDataEditorDebugging) Debug.Log("ItemDataEditor:: CacheItemNames():: Caching.");
 			itemNamesCache = new List<string>();
 			for (int i = 0; i < itemDatabaseCache.ItemList.Count; i++){
@@ -372,33 +378,42 @@ using UnityEngine.Events;
 		}
 
 		static void OnAddNewButtonClicked(){
+
 			ItemDataEntry newEntry = ItemDataEntry.Create("New Item");
 			AddSubAsset(newEntry, itemDatabaseCache);
 			itemDatabaseCache.ItemList.Add(newEntry);
 			if (itemDataEditorDebugging) Debug.Log("ItemDataEditor:: OnAddNewButtonClicked():: New entry added to itemDatabaseCache.ItemList.");
-			itemNamesCache.Add("New Item");
-			if (itemDataEditorDebugging) Debug.Log("ItemDataEditor:: OnAddNewButtonClicked():: \"New Item\" added to itemNamesCache to be optimistic.");
-			filteredItemNamesCache = new List<string>(itemNamesCache);
+			CacheItemNames();
+
 			ForceChangeFilterValue("");
+			//itemNamesCache.Add("New Item");
+			//if (itemDataEditorDebugging) Debug.Log("ItemDataEditor:: OnAddNewButtonClicked():: \"New Item\" added to itemNamesCache to be optimistic.");
+			//filteredItemNamesCache = new List<string>(itemNamesCache);
 
 			selected = itemDatabaseCache.ItemList.Count - 1;		
 			LoadEntry(itemDatabaseCache.ItemList[selected]);
+
+			dDrawEditorContent = EditorContent_DrawEditor;
+			dDrawSidebarContent = Sidebar_DrawSelections;
+
 			SaveDatabase();
 		}
 
 		static void OnDeleteSelectedButtonClicked(){
 			if (itemDataEditorDebugging) Debug.Log("ItemDataEditor:: OnDeleteSelectedButtonClicked():: Currently selected index: " + selected);
 
-			if (itemDataEditorDebugging) Debug.Log("ItemDataEditor:: OnDeleteSelectedButtonClicked():: Removing reference of deleted entry in itemDatabase and filterList.");
-			itemDatabaseCache.ItemList.Remove(entryCache);
 			//Optimistic change on UI
 			filteredList.Remove(entryCache);
-
-			if (itemDataEditorDebugging) Debug.Log("ItemDataEditor:: OnDeleteSelectedButtonClicked():: Removing itemID cahce in filteredItemNames.");
+			if (itemDataEditorDebugging) Debug.Log("ItemDataEditor:: OnDeleteSelectedButtonClicked():: Removing itemID cache in filteredItemNames.");
 			filteredItemNamesCache.RemoveAt(selected);
 
+			//Actually remove reference and destroy
+			if (itemDataEditorDebugging) Debug.Log("ItemDataEditor:: OnDeleteSelectedButtonClicked():: Removing reference of deleted entry in itemDatabase and filterList.");
+			itemDatabaseCache.ItemList.Remove(entryCache);
 			DestroyImmediate(entryCache, true);
 			if (itemDataEditorDebugging) Debug.Log("ItemDataEditor:: OnDeleteSelectedButtonClicked():: Designated entry destroyed.");
+
+			CacheItemNames();
 
 			if (filteredList.Count > 0) {
 				if (itemDataEditorDebugging) Debug.Log("ItemDataEditor:: OnDeleteSelectedButtonClicked():: Loading filteredList[" + (selected - 1) + "]");
@@ -406,11 +421,16 @@ using UnityEngine.Events;
 				LoadEntry(filteredList[selected]);
 			}
 			else {
-				if (itemDataEditorDebugging) Debug.Log("ItemDataEditor:: OnDeleteSelectedButtonClicked():: No entry left in filteredList, clearing filter.");
-				ForceChangeFilterValue("");
+				if (activeFilter == "") {
+					dDrawSidebarContent = Sidebar_ShowDatabaseEmpty;
+					dDrawEditorContent = EditorContent_NoSelection;
+				} 
+				else {
+					if (itemDataEditorDebugging) Debug.Log("ItemDataEditor:: OnDeleteSelectedButtonClicked():: No entry left in filteredList, clearing filter.");
+					ForceChangeFilterValue("");
+				}
 			}
 
-			CacheItemNames(itemDatabaseCache.ItemList);
 			SaveDatabase();
 		}
 
@@ -469,7 +489,7 @@ using UnityEngine.Events;
 		static void SaveTimer(){
 			double temp = EditorApplication.timeSinceStartup - lastChangeTime;
 			if (temp > 2){
-				Debug.Log("Delayed saving done after: " + temp);
+				if (itemDataEditorDebugging) Debug.Log("Delayed saving done after: " + temp);
 				SaveDatabase();
 				EditorApplication.update -= SaveTimer;
 			}
