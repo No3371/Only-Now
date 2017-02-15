@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61c54fa3bf87ca84c80209bf56c674ef, type: 3}
+  m_Name: CollectionDatabase
+  m_EditorClassIdentifier: 
+  lastBackupTime: 636227973866639754
+  itemList:
+  - {fileID: 114220652314019644}
+  - {fileID: 114445573571095232}
+--- !u!114 &114220652314019644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a465210e067917e4d9d97e8006237714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: New Item
+  itemBasicDescription: 
+  itemThumbnail: {fileID: 0}
+  itemImage: {fileID: 0}
+  tags: []
+--- !u!114 &114445573571095232
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a465210e067917e4d9d97e8006237714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: New Item
+  itemBasicDescription: 
+  itemThumbnail: {fileID: 0}
+  itemImage: {fileID: 0}
+  tags: []

@@ -52,7 +52,7 @@ namespace DialogNodeEditor
                 GUILayout.EndHorizontal();
 
                 Rect temp = GUILayoutUtility.GetLastRect();
-                Handles.DrawLine(new Vector2(temp.left, temp.bottom + 6), new Vector2(temp.right, temp.bottom + 6));
+                Handles.DrawLine(new Vector2(temp.xMin, temp.yMax + 6), new Vector2(temp.xMax, temp.yMax + 6));
 
                 GUILayout.Space(8);
 

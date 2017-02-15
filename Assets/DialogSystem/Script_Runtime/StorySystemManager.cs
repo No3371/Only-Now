@@ -19,8 +19,6 @@ namespace StorySystem.Runtime
 
         public const float textDelayGlobalFactor = 1.1f;
 
-        public VariableProfileCache variableProfileCache;
-
         Stack<GameObject> DialogBubblePool = new Stack<GameObject>();
         GameObject OptionsDialogReserve;
 
@@ -43,7 +41,7 @@ namespace StorySystem.Runtime
             if (instance == null) instance = this;
             if (instance != this) Destroy(this);
             DontDestroyOnLoad(this);
-            BubblePooling();
+            //BubblePooling();
         }
 
         // Update is called once per frame
@@ -53,19 +51,20 @@ namespace StorySystem.Runtime
 
         }
 
-        void BubblePooling(int amount = 5)
-        {
-            for (int i = 0; i < amount; i++)
-            {
-                GameObject bb = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/DialogBubble"));
-                bb.transform.SetParent(GameObject.Find("Canvas").transform);
-                bb.SetActive(false);
-                DialogBubblePool.Push(bb);
-            }
+//TODO_BA Fix Pooling
+        // void BubblePooling(int amount = 5)
+        // {
+        //     for (int i = 0; i < amount; i++)
+        //     {
+        //         GameObject bb = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/DialogBubble"));
+        //         bb.transform.SetParent(GameObject.Find("Canvas").transform);
+        //         bb.SetActive(false);
+        //         DialogBubblePool.Push(bb);
+        //     }
 
-            OptionsDialogReserve = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/OptionsDialogBubble"));
-            OptionsDialogReserve.SetActive(false);    
-        }
+        //     OptionsDialogReserve = GameObject.Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/OptionsDialogBubble"));
+        //     OptionsDialogReserve.SetActive(false);    
+        // }
 
         public void ActivateSpeaker(Speaker speaker)
         {

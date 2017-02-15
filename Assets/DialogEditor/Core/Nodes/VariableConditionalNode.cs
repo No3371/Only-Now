@@ -4,7 +4,7 @@ using System.Linq;
 using NodeEditorFramework;
 using UnityEditor;
 using UnityEngine;
-using StorySystem.Data;
+using VariableSystem;
 
 namespace DialogNodeEditor
 {
@@ -124,10 +124,6 @@ namespace DialogNodeEditor
                                             cond.cond = (VariableCondition) EditorGUILayout.Popup( (int) cond.cond, new string[] { "==", "!="}, GUILayout.MaxWidth(30));  
                                             cond.vString = EditorGUILayout.TextField(cond.vString);
                                             break;
-                                        case VariableType.Int:
-                                            cond.cond = (VariableCondition) EditorGUILayout.Popup( (int) cond.cond, new string[] { "==", "!=", ">", "<", ">=", "<=" }, GUILayout.MaxWidth(30));
-                                            cond.vInt = EditorGUILayout.IntField(cond.vInt);
-                                            break;
                                         case VariableType.Bool:
                                             GUILayout.Label("IsTrue?", GUILayout.Width(50));
                                             cond.vBool = EditorGUILayout.Toggle(cond.vBool);
@@ -146,7 +142,7 @@ namespace DialogNodeEditor
 
         private void AddNewCondition()
         {
-            VariableConditionItem opt = new VariableConditionItem("key", VariableCondition.IsEqual, 0);
+            VariableConditionItem opt = new VariableConditionItem("StorySystem", "key", VariableCondition.IsEqual, 0);
             rect = new Rect(rect.x, rect.y, rect.width, rect.height + SizeValue);
             conditions.Add(opt);
         }

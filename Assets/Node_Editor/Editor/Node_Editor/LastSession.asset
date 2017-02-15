@@ -15,21 +15,36 @@ MonoBehaviour:
   - {fileID: 114994760537530450}
   - {fileID: 114653194999172796}
   - {fileID: 114109999989380904}
-  - {fileID: 114707571386378350}
   - {fileID: 114652984422859514}
-  - {fileID: 114084048877899576}
   - {fileID: 114812265900222342}
   - {fileID: 114877346954506410}
   - {fileID: 114479799602192846}
-  - {fileID: 114503778088527246}
   - {fileID: 114951531725826072}
-  - {fileID: 114066573270433484}
   - {fileID: 114806516815877728}
+  - {fileID: 114707571386378350}
+  - {fileID: 114066573270433484}
   editorStates:
   - {fileID: 114861070480308836}
   livesInScene: 0
   convStartNode: {fileID: 0}
   description: 
+--- !u!114 &114038718835717800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4caff27366054dd44a30ddb5be369acc, type: 3}
+  m_Name: Previous Node
+  m_EditorClassIdentifier: 
+  body: {fileID: 0}
+  side: 4
+  sidePosition: 36
+  sideOffset: 0
+  connection: {fileID: 0}
+  typeID: DialogForward
 --- !u!114 &114060045053588890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -62,7 +77,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rect:
     serializedVersion: 2
-    x: 1200.8015
+    x: 1202.4015
     y: -42.599747
     width: 360
     height: 552
@@ -74,69 +89,114 @@ MonoBehaviour:
   Outputs:
   - {fileID: 114519613287132556}
   operations:
-  - key: key
+  - groupID: 
+    key: key
     type: 0
     vInt: 0
     vFloat: 0
     opt: 4
     vString: 
     vBool: 0
-  - key: key
+    targetVar: 0
+    targetGroupID: 
+    targetKey: 
+    unfolded: 0
+  - groupID: 
+    key: key
     type: 0
     vInt: 0
     vFloat: 0
     opt: 4
     vString: 
     vBool: 0
-  - key: key
+    targetVar: 0
+    targetGroupID: 
+    targetKey: 
+    unfolded: 0
+  - groupID: 
+    key: key
     type: 0
     vInt: 0
     vFloat: 0
     opt: 4
     vString: 
     vBool: 0
-  - key: key
+    targetVar: 0
+    targetGroupID: 
+    targetKey: 
+    unfolded: 0
+  - groupID: 
+    key: key
     type: 0
     vInt: 0
     vFloat: 0
     opt: 4
     vString: 
     vBool: 0
-  - key: key
+    targetVar: 0
+    targetGroupID: 
+    targetKey: 
+    unfolded: 0
+  - groupID: 
+    key: key
     type: 0
     vInt: 0
     vFloat: 0
     opt: 4
     vString: 
     vBool: 0
-  - key: key
+    targetVar: 0
+    targetGroupID: 
+    targetKey: 
+    unfolded: 0
+  - groupID: 
+    key: key
     type: 0
     vInt: 0
     vFloat: 0
     opt: 4
     vString: 
     vBool: 0
-  - key: key
+    targetVar: 0
+    targetGroupID: 
+    targetKey: 
+    unfolded: 0
+  - groupID: 
+    key: key
     type: 0
     vInt: 0
     vFloat: 0
     opt: 4
     vString: 
     vBool: 0
-  - key: key
+    targetVar: 0
+    targetGroupID: 
+    targetKey: 
+    unfolded: 0
+  - groupID: 
+    key: key
     type: 0
     vInt: 0
     vFloat: 0
     opt: 4
     vString: 
     vBool: 0
-  - key: key
+    targetVar: 0
+    targetGroupID: 
+    targetKey: 
+    unfolded: 0
+  - groupID: 
+    key: key
     type: 0
     vInt: 0
     vFloat: 0
     opt: 4
     vString: 
     vBool: 0
+    targetVar: 0
+    targetGroupID: 
+    targetKey: 
+    unfolded: 0
 --- !u!114 &114069521215093806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,29 +215,6 @@ MonoBehaviour:
   connections: []
   typeID: DialogForward
   calculationBlockade: 0
---- !u!114 &114084048877899576
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 244c861b4fee5dc46b827503e40043ae, type: 3}
-  m_Name: Conversation End Node
-  m_EditorClassIdentifier: 
-  rect:
-    serializedVersion: 2
-    x: 1220.4009
-    y: -437.19977
-    width: 300
-    height: 48
-  nodeKnobs:
-  - {fileID: 114773869877211992}
-  Inputs:
-  - {fileID: 114773869877211992}
-  Outputs: []
-  dialogName: 
 --- !u!114 &114104345287153032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -317,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e7026d0da7df848ab67d517ac12d74, type: 3}
   m_Name: Next Node
   m_EditorClassIdentifier: 
-  body: {fileID: 114503778088527246}
+  body: {fileID: 0}
   side: 2
   sidePosition: 30
   sideOffset: 0
@@ -409,6 +446,24 @@ MonoBehaviour:
   body: {fileID: 0}
   side: 1
   sidePosition: 225
+  sideOffset: 0
+  connections: []
+  typeID: DialogForward
+  calculationBlockade: 0
+--- !u!114 &114238504734856104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42e7026d0da7df848ab67d517ac12d74, type: 3}
+  m_Name: Next Node
+  m_EditorClassIdentifier: 
+  body: {fileID: 0}
+  side: 2
+  sidePosition: 30
   sideOffset: 0
   connections: []
   typeID: DialogForward
@@ -769,27 +824,45 @@ MonoBehaviour:
   - {fileID: 114379828567042974}
   - {fileID: 114204667576523886}
   conditions:
-  - key: key
+  - groupID: 
+    key: key
     type: 0
     vInt: 0
     vFloat: 0
     cond: 0
     vString: 
     vBool: 0
-  - key: key
+    isNegative: 0
+    targetVar: 0
+    targetGroupID: 
+    targetKey: 
+    unfolded: 0
+  - groupID: 
+    key: key
     type: 0
     vInt: 0
     vFloat: 0
     cond: 0
     vString: 
     vBool: 0
-  - key: key
+    isNegative: 0
+    targetVar: 0
+    targetGroupID: 
+    targetKey: 
+    unfolded: 0
+  - groupID: 
+    key: key
     type: 0
     vInt: 0
     vFloat: 0
     cond: 0
     vString: 
     vBool: 0
+    isNegative: 0
+    targetVar: 0
+    targetGroupID: 
+    targetKey: 
+    unfolded: 0
   condGroup: 0
 --- !u!114 &114653194999172796
 MonoBehaviour:
@@ -817,6 +890,35 @@ MonoBehaviour:
   - {fileID: 114279046009602860}
   speakerID: 
   dialogText: What I'll say...
+--- !u!114 &114666619083105442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e7d6466d0523541a3cbe47686a7b63, type: 3}
+  m_Name: External Bool Check
+  m_EditorClassIdentifier: 
+  rect:
+    serializedVersion: 2
+    x: 1984.0986
+    y: -373.39972
+    width: 160
+    height: 84
+  nodeKnobs:
+  - {fileID: 114910131384780700}
+  - {fileID: 114814968158118406}
+  Inputs:
+  - {fileID: 114910131384780700}
+  Outputs:
+  - {fileID: 114814968158118406}
+  checkEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: StorySystem.Data.CheckEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114694595177397824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -875,28 +977,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4caff27366054dd44a30ddb5be369acc, type: 3}
   m_Name: Previous Node
   m_EditorClassIdentifier: 
-  body: {fileID: 114503778088527246}
+  body: {fileID: 0}
   side: 4
   sidePosition: 30
   sideOffset: 0
   connection: {fileID: 0}
-  typeID: DialogForward
---- !u!114 &114773869877211992
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4caff27366054dd44a30ddb5be369acc, type: 3}
-  m_Name: Previous Node
-  m_EditorClassIdentifier: 
-  body: {fileID: 114084048877899576}
-  side: 4
-  sidePosition: 30
-  sideOffset: 0
-  connection: {fileID: 114886746273177426}
   typeID: DialogForward
 --- !u!114 &114806516815877728
 MonoBehaviour:
@@ -926,6 +1011,35 @@ MonoBehaviour:
   performerID: 
   wayPointID: 
   speed: 0
+--- !u!114 &114810204316489348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e7d6466d0523541a3cbe47686a7b63, type: 3}
+  m_Name: External Bool Check
+  m_EditorClassIdentifier: 
+  rect:
+    serializedVersion: 2
+    x: 1894.1986
+    y: -322.1997
+    width: 160
+    height: 84
+  nodeKnobs:
+  - {fileID: 114925023662620806}
+  - {fileID: 114984572525553312}
+  Inputs:
+  - {fileID: 114925023662620806}
+  Outputs:
+  - {fileID: 114984572525553312}
+  checkEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: StorySystem.Data.CheckEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114812265900222342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -949,6 +1063,24 @@ MonoBehaviour:
   - {fileID: 114424630468245786}
   Outputs: []
   targetID: 
+--- !u!114 &114814968158118406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42e7026d0da7df848ab67d517ac12d74, type: 3}
+  m_Name: Next Node
+  m_EditorClassIdentifier: 
+  body: {fileID: 0}
+  side: 2
+  sidePosition: 30
+  sideOffset: 0
+  connections: []
+  typeID: DialogForward
+  calculationBlockade: 0
 --- !u!114 &114861070480308836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -964,8 +1096,8 @@ MonoBehaviour:
   parentEditor: {fileID: 0}
   drawing: 1
   selectedNode: {fileID: 0}
-  panOffset: {x: -1123.7972, y: 205.19974}
-  zoom: 2
+  panOffset: {x: -1255.5792, y: -136.64029}
+  zoom: 1
 --- !u!114 &114877346954506410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1026,10 +1158,26 @@ MonoBehaviour:
   side: 2
   sidePosition: 36
   sideOffset: 0
-  connections:
-  - {fileID: 114773869877211992}
+  connections: []
   typeID: DialogForward
   calculationBlockade: 0
+--- !u!114 &114910131384780700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4caff27366054dd44a30ddb5be369acc, type: 3}
+  m_Name: Previous Node
+  m_EditorClassIdentifier: 
+  body: {fileID: 0}
+  side: 4
+  sidePosition: 36
+  sideOffset: 0
+  connection: {fileID: 0}
+  typeID: DialogForward
 --- !u!114 &114912818392183560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1065,6 +1213,23 @@ MonoBehaviour:
   connections: []
   typeID: DialogForward
   calculationBlockade: 0
+--- !u!114 &114925023662620806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4caff27366054dd44a30ddb5be369acc, type: 3}
+  m_Name: Previous Node
+  m_EditorClassIdentifier: 
+  body: {fileID: 0}
+  side: 4
+  sidePosition: 36
+  sideOffset: 0
+  connection: {fileID: 0}
+  typeID: DialogForward
 --- !u!114 &114951531725826072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1089,6 +1254,24 @@ MonoBehaviour:
   - {fileID: 114060045053588890}
   convID: ID of this conversation
   description: 
+--- !u!114 &114984572525553312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42e7026d0da7df848ab67d517ac12d74, type: 3}
+  m_Name: Next Node
+  m_EditorClassIdentifier: 
+  body: {fileID: 0}
+  side: 2
+  sidePosition: 30
+  sideOffset: 0
+  connections: []
+  typeID: DialogForward
+  calculationBlockade: 0
 --- !u!114 &114990354781545096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1106,6 +1289,35 @@ MonoBehaviour:
   sideOffset: 0
   connection: {fileID: 114060045053588890}
   typeID: DialogForward
+--- !u!114 &114990399153574624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e7d6466d0523541a3cbe47686a7b63, type: 3}
+  m_Name: External Bool Check
+  m_EditorClassIdentifier: 
+  rect:
+    serializedVersion: 2
+    x: 1850
+    y: -260
+    width: 160
+    height: 84
+  nodeKnobs:
+  - {fileID: 114038718835717800}
+  - {fileID: 114238504734856104}
+  Inputs:
+  - {fileID: 114038718835717800}
+  Outputs:
+  - {fileID: 114238504734856104}
+  checkEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: StorySystem.Data.CheckEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114990912461624336
 MonoBehaviour:
   m_ObjectHideFlags: 1

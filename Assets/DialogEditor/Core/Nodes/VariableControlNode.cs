@@ -4,7 +4,7 @@ using System.Linq;
 using NodeEditorFramework;
 using UnityEditor;
 using UnityEngine;
-using StorySystem.Data;
+using VariableSystem;
 
 namespace DialogNodeEditor
 {
@@ -98,7 +98,7 @@ namespace DialogNodeEditor
                         GUILayout.EndVertical();                        
                         GUILayout.BeginVertical();  
                             GUILayout.BeginHorizontal();
-                                opt.type = (VariableType) EditorGUILayout.Popup( (int) opt.type, new string[] { "Integer", "Float", "String", "Bool"}, GUILayout.MaxWidth(80));
+                                opt.type = (VariableType) EditorGUILayout.Popup( (int) opt.type, Enum.GetNames(typeof(VariableType)), GUILayout.MaxWidth(80));
                                 opt.key = EditorGUILayout.TextField(opt.key);
                             GUILayout.EndHorizontal(); 
                             GUILayout.BeginHorizontal();
@@ -111,10 +111,6 @@ namespace DialogNodeEditor
                                         case VariableType.String:
                                             GUILayout.Label("Set to", GUILayout.Width(40));
                                             opt.vString = EditorGUILayout.TextField(opt.vString);
-                                            break;
-                                        case VariableType.Int:
-                                            opt.opt = (VariableOperation) EditorGUILayout.Popup( (int) opt.opt, new string[] { "+", "-", "*", "÷", "=" }, GUILayout.MaxWidth(30));
-                                            opt.vInt = EditorGUILayout.IntField(opt.vInt);
                                             break;
                                         case VariableType.Bool:
                                             GUILayout.Label("IsTrue", GUILayout.Width(40));
@@ -133,7 +129,7 @@ namespace DialogNodeEditor
 
         private void AddNewOperation()
         {
-            VariableControlItem opt = new VariableControlItem("key", VariableOperation.Set, 0);
+            VariableControlItem opt = new VariableControlItem("StorySystem", "key", VariableOperation.Set, 0);
             rect = new Rect(rect.x, rect.y, rect.width, rect.height + SizeValue);
             operations.Add(opt);
         }

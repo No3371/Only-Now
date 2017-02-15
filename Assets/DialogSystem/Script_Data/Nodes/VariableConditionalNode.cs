@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using StorySystem.Runtime;
-using StorySystem.Data;
+using VariableSystem;
 
 namespace StorySystem.Data
 {
